@@ -51,6 +51,26 @@ import {
   ChevronDown
 } from 'lucide-react';
 
+// --- Styles Personnalisés pour l'Animation du Portrait ---
+const CustomStyles = () => (
+  <style>{`
+    @keyframes rotate-gradient {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .animate-border-rotate {
+      animation: rotate-gradient 8s linear infinite;
+    }
+    @keyframes breathe-glow {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    .animate-glow-pulse {
+      animation: breathe-glow 4s ease-in-out infinite;
+    }
+  `}</style>
+);
+
 // --- Icônes Personnalisées ---
 
 const SapIcon = ({ size = 18, className = "" }) => (
@@ -234,7 +254,7 @@ const projectsData = [
         resultats: "App features: Interactive data extracts, global summaries, descriptive analysis by crime category, and geographical mapping. \n\nDeveloped skills: Mastery of PCA, complex national-scale data processing, Shiny development for technical popularization, and autonomy over the full analysis cycle." 
       },
       es: { 
-        contexte: "En este proyecto, diseñé una aplicación interactiva para explorar los datos de criminalidad en los EE. UU. para 2019 mediante análisis estadísticos y visualizaciones dinámicas. El proyecto utiliza principalmente el Análisis de Componentes Principales (ACP) para identificar estructuras subyacentes y tendencias globales.", 
+        contexte: "En este proyecto, diseñé una application interactiva para explorar los datos de criminalidad en los EE. UU. para 2019 mediante análisis estadísticos y visualizaciones dinámicas. El proyecto utiliza principalmente el Análisis de Componentes Principales (ACP) para identificar estructuras subyacentes y tendencias globales.", 
         methodologie: "Limpieza de datos del FBI y aplicación de ACP para reducir la dimensionalidad. Análisis de la relación entre variables socioeconómicas y tasas de criminalidad. Desarrollado en R con Shiny.", 
         resultats: "Funcionalidades: Visualización de datos, síntesis de tendencias, análisis descriptivo y cartografía por estado. Competencias: Dominio del ACP, visualización de datos complejos y divulgación técnica." 
       },
@@ -322,7 +342,7 @@ const projectsData = [
     }, 
     tags: ["Statistiques", "Santé", "Excel"], 
     gradient: "from-yellow-400 to-amber-600", 
-    images: ["images/photo3_1.png"],
+    images: ["images/Projet EPSM/image.jpg"],
     link: null
   },
   { 
@@ -349,14 +369,14 @@ const projectsData = [
       },
       de: {
         contexte: "Ich habe ein monatliches Budget-Reporting-Tool mit Excel und VBA-Makros erstellt, das automatisch einen Power BI-Bericht aktualisiert, um eine detailliertere finanzielle Übersicht zu erhalten.",
-        methodologie: "Die Ausgaben werden in einer Excel-Datei mit integrierten Prüfmechanismen erfasst. Ein VBA-Makro automatisiert den Datentransfer zu Power BI.",
+        methodologie: "Die Ausgaben werden in einer Excel-Datei mit integrierten Prüfmechanismen erfasst. Un VBA-Makro automatisiert den Datentransfer zu Power BI.",
         resultats: "Der Bericht bietet 4 Ansichten: Ausgaben, Einnahmen, Übersicht und Prognosen zur besseren finanziellen Planung und Analyse."
       }
     }, 
     tags: ["BI", "Budget", "Excel"], 
     gradient: "from-orange-500 to-red-600", 
-    images: ["images/photo4_1.png"],
-    link: "https://mat-esteban.github.io/mon-portfolio/mon_template/Reporting.html"
+    images: ["images/Reporting budget mensuel/image.jpg"],
+    link: null
   },
   { 
     id: 5, 
@@ -378,7 +398,7 @@ const projectsData = [
       es: {
         contexte: "El objetivo principal fue recolectar datos actualizados de productos electrodomésticos del sitio Boulanger.com para integrarlos en una base de datos MySQL.",
         methodologie: "Diseño de un pipeline ETL completo usando Python (BeautifulSoup, Selenium) para la extracción dinámica. Limpieza y normalización de datos antes de la inserción en base.",
-        resultats: "Competencias: Web scraping avanzado, diseño de pipelines ETL y gestión de bases de datos relacionales respetando la ética de acceso."
+        resultats: "Competencias: Web scraping avanzado, diseño de pipelines ETL y gestión de bases de données relacionales respetando la ética de acceso."
       },
       de: {
         contexte: "Ziel war die Erfassung aktueller Produktdaten von Boulanger.com zur Integration in eine MySQL-Datenbank für weitere Analysen.",
@@ -388,8 +408,8 @@ const projectsData = [
     }, 
     tags: ["Python", "HTML", "Data"], 
     gradient: "from-cyan-500 to-blue-500", 
-    images: ["images/photo5_1.png"],
-    link: "https://mat-esteban.github.io/mon-portfolio/index.html"
+    images: ["images/Scrapping/image.jpg"],
+    link: null
   },
   { 
     id: 6, 
@@ -406,8 +426,7 @@ const projectsData = [
     tags: ["Stage", "Bancaire", "Data Analysis"], 
     gradient: "from-emerald-600 to-green-700", 
     images: [
-      "images/Stage/cr-1.jpg",
-      "images/Stage/cr-2.jpg"
+      "images/Stage/image.jpg"
     ],
     link: null
   }
@@ -589,6 +608,7 @@ const ImageGallery = ({ images, darkMode }) => {
 
 const Hero = ({ t, darkMode }) => (
   <section className={`relative min-h-[85vh] flex items-center pt-20 overflow-hidden transition-colors duration-700 ${darkMode ? 'bg-slate-900' : 'bg-white'}`}>
+    <CustomStyles />
     <div className={`absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] -mr-48 -mt-24 opacity-60 transition-colors duration-700 ${darkMode ? 'bg-purple-900/20' : 'bg-purple-50'}`}></div>
     <div className={`absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-[100px] -ml-24 -mb-24 opacity-60 transition-colors duration-700 ${darkMode ? 'bg-blue-900/20' : 'bg-blue-50'}`}></div>
     <div className="max-w-6xl mx-auto px-6 relative z-10 w-full text-center md:text-left">
@@ -611,10 +631,30 @@ const Hero = ({ t, darkMode }) => (
           </div>
         </div>
         <div className="relative shrink-0 order-first md:order-last">
-           <div className={`w-64 h-64 md:w-96 md:h-96 rounded-[40px] border-4 overflow-hidden relative flex items-center justify-center z-10 shadow-2xl transition-all duration-700 ${darkMode ? 'bg-slate-800 border-slate-700' : 'bg-gray-50 border-white'}`}>
-              <div className={`absolute inset-0 bg-gradient-to-br ${darkMode ? 'from-slate-800 to-slate-900' : 'from-purple-50 to-gray-100'}`}></div>
-              <span className={`relative z-10 font-black uppercase tracking-widest text-sm text-center px-4 ${darkMode ? 'text-slate-500' : 'text-gray-400'}`}>Portrait <br/> Matéo Esteban</span>
-           </div>
+          {/* EFFET DE LUEUR PULSÉE DERRIÈRE LE CADRE */}
+          <div className="absolute inset-0 bg-purple-500 rounded-[45px] blur-3xl opacity-20 animate-glow-pulse"></div>
+          
+          <div className={`relative w-64 h-64 md:w-96 md:h-96 rounded-[40px] p-[3px] overflow-hidden group shadow-2xl transition-all duration-700 ${darkMode ? 'bg-slate-800' : 'bg-white'}`}>
+            {/* BORDURE DÉGRADÉE TOURNANTE (Uniquement visible via le padding p-[3px]) */}
+            <div className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_20%,#9333ea_50%,transparent_80%)] animate-border-rotate group-hover:bg-[conic-gradient(from_0deg,transparent_20%,#6366f1_50%,transparent_80%)] transition-all duration-1000"></div>
+            
+            {/* CONTENEUR IMAGE INTERNE */}
+            <div className={`relative w-full h-full rounded-[37px] overflow-hidden ${darkMode ? 'bg-slate-900' : 'bg-gray-50'}`}>
+              <img 
+                src="images/portrait/cv_image.png" 
+                alt="Portrait Matéo Esteban" 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'flex';
+                }}
+              />
+              {/* Fallback si l'image ne charge pas */}
+              <div style={{display: 'none'}} className="w-full h-full items-center justify-center font-black uppercase tracking-widest text-xs text-center px-4 text-slate-400">
+                Portrait <br/> Matéo Esteban
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
