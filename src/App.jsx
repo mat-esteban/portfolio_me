@@ -621,14 +621,11 @@ const Hero = ({ t, darkMode }) => (
             {t.hero.title} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-500">{t.hero.subtitle}</span>
           </h1>
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-            <button onClick={(e) => smoothScrollTo(e, '#projects')} className={`group flex items-center gap-3 px-8 py-4 rounded-2xl font-black shadow-xl transition-all ${darkMode ? 'bg-white text-slate-900 hover:bg-slate-100' : 'bg-gray-900 text-white hover:bg-gray-800'}`}>
-              {t.hero.btnWork} <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <a href={personalInfo.cv} target="_blank" rel="noreferrer" className={`flex items-center gap-3 px-8 py-4 border rounded-2xl font-black transition-all ${darkMode ? 'bg-slate-800 border-slate-700 text-white hover:bg-slate-700' : 'bg-white border-gray-200 text-gray-700 hover:border-purple-200 hover:text-purple-600 hover:bg-purple-50/30'}`}>
-              <Download size={20} /> {t.hero.btnCv}
-            </a>
-          </div>
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+              <button onClick={(e) => smoothScrollTo(e, '#projects')} className={`group flex items-center gap-3 px-8 py-4 rounded-2xl font-black shadow-xl transition-all ${darkMode ? 'bg-white text-slate-900 hover:bg-slate-100' : 'bg-gray-900 text-white hover:bg-gray-800'}`}>
+                {t.hero.btnWork} <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
         </div>
         <div className="relative shrink-0 order-first md:order-last">
           {/* EFFET DE LUEUR PULSÉE DERRIÈRE LE CADRE */}
