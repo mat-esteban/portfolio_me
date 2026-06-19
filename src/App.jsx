@@ -860,7 +860,7 @@ export default function App() {
               <div className="max-w-4xl mx-auto px-6 relative z-10">
                 <h2 className="text-4xl md:text-6xl font-black text-white mb-8">{t.contact.title}</h2>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                  <a href="mailto:promateoesteban1@gmail.com" target="_blank" rel="noreferrer" onClick={(e) => { e.preventDefault(); window.location.href = 'mailto:promateoesteban1@gmail.com'; }} className="px-10 py-5 bg-white text-purple-600 rounded-[2rem] font-black text-lg shadow-2xl hover:scale-105 transition-all flex items-center gap-3"><Mail size={24} /> {t.contact.btn}</a>
+                  <a href="https://mail.google.com/mail/?view=cm&to=promateoesteban1@gmail.com" target="_blank" rel="noreferrer" className="px-10 py-5 bg-white text-purple-600 rounded-[2rem] font-black text-lg shadow-2xl hover:scale-105 transition-all flex items-center gap-3"><Mail size={24} /> {t.contact.btn}</a>
                   <div className="flex gap-4">
                     <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" className="p-5 bg-white/20 text-white rounded-[2rem] hover:bg-white hover:text-purple-600 transition-all shadow-xl backdrop-blur-md active:scale-90"><Linkedin size={28} /></a>
                     <a href="https://github.com/mat-esteban" target="_blank" rel="noreferrer" className="p-5 bg-white/20 text-white rounded-[2rem] hover:bg-white hover:text-purple-600 transition-all shadow-xl backdrop-blur-md active:scale-90"><GithubIcon size={28} /></a>
